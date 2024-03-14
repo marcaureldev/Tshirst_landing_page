@@ -73,7 +73,7 @@
                     <div class="p-8 text-center lg:text-start">
                         <div class="lg:flex gap-28 items-center justify-center">
                             <img src="../../assets/images/add_shirt_design.svg" alt="" class="w-[25em] mx-auto">
-                            <span class="w-16 rounded-full text-center box">1</span>
+                            <span class="w-16 px-3  py-2 rounded-full text-center box">1</span>
                             <div>
                                 <h2 class="font-bold text-2xl">Add your shirt design</h2>
                                 <p class="text-[#7E7E7E]">
@@ -87,7 +87,7 @@
                     <div class="p-8 text-center lg:text-start">
                         <div class="lg:flex flex-row-reverse gap-28 items-center ">
                             <img src="../../assets/images/custom_artwork.svg" alt="" class="w-[25em] mx-auto">
-                            <span class="w-14 rounded-full text-center box">2</span>
+                            <span class="w-14 px-3  py-2 rounded-full text-center box">2</span>
                             <div>
                                 <h2 class="font-bold text-2xl">Custom artwork &review</h2>
                                 <p class="text-[#7E7E7E]">
@@ -101,7 +101,7 @@
                     <div class="p-8 text-center lg:text-start">
                         <div class="lg:flex gap-28 items-center">
                             <img src="../../assets/images/enjoy_product.svg" alt="" class="w-[25em] mx-auto">
-                            <span class="w-16 h- rounded-full text-center box">3</span>
+                            <span class="w-16 px-3  py-2 h- rounded-full text-center box">3</span>
                             <div>
                                 <h2 class="font-bold text-2xl">Enjoy your product</h2>
                                 <p class="text-[#7E7E7E]">
@@ -354,36 +354,7 @@
         </section>
 
         <section class="bg-[#B479D926]">
-            <div class="flex justify-between text-center lg:text-start  space-y-8 p-10">
-                <div class="max-w-[20em] lg:block hidden">
-                    <img src="../../assets/images/believe.svg" alt="" class="w-[20em]">
-                    <div class="flex items-center max-w-[10em]">
-                        <img src="../../assets/images/two.svg" alt="">
-                        <img src="../../assets/images/dame.svg" alt="">
-                    </div>
-                </div>
-
-                <div class="space-y-6 max-w-[35em] mx-auto">
-                    <h1 class="text-4xl font-bold text-center leading-snug">Enjoy up your vacations <br> in the best T-shirts</h1>
-                    <p class="text-[#7E7E7E] text-center">T-shirts that keep you moving.</p>
-                    <div class="flex justify-center gap-8">
-                        <button class="flex items-center gap-2 bg-[#2EBB77] px-4 py-1 rounded-lg text-white font-medium text-sm mx-auto lg:mx-0">
-                             Shop Now<img src="../../assets/icons/arrow_white.svg" alt="">
-                        </button>
-                        <button class="flex items-center gap-2 px-4 py-1 rounded-lg font-medium bg-white text-sm mx-auto lg:mx-0">
-                            Contact Us<img src="../../assets/icons/fleche_footer.svg" alt="">
-                        </button>
-                    </div>
-                </div>
-
-                <div class="max-w-[25em] lg:block hidden">
-                    <img src="../../assets/images/baby_women.svg" alt="">
-                    <div class="flex max-w-[9em]">
-                        <img src="../../assets/images/feel_good.svg" alt="">
-                        <img src="../../assets/images/dame_1.svg" alt="">
-                    </div>
-                </div>
-            </div>
+             <EnjoyCard/>
         </section>
 
         <section class="max-w-[70em] mx-auto">
@@ -407,12 +378,14 @@
 import Navbar  from '../Navbar.vue'
 import Card from '../Card.vue'
 import myfooter from '../myfooter.vue'
+import EnjoyCard from '../EnjoyCard.vue'
 
 export default {
     components:{
         Navbar,
         Card,
         myfooter,
+        EnjoyCard,
     }
 
 }

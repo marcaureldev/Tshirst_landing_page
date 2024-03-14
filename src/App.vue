@@ -1,14 +1,20 @@
 <template>
      <div id="app">
-        <Homepage/>
+        <!-- <Homepage/> -->
+        <!-- <Ourteam/> -->
+        <Services/>
     </div>
 </template>
 
 <script>
 import Homepage from './components/pages/Homepage.vue'
+import Ourteam from './components/pages/Ourteam.vue'
+import Services from './components/pages/Services.vue'
 export default {
     components:{
         Homepage,
+        Ourteam,
+        Services,
     }
 }
 </script>

@@ -29,7 +29,7 @@
             <div class="space-y-3">
                 <h1 class="text-lg font-bold">Newsletter</h1>
                 <p class="text-[#7E7E7E]">Get the latest news, events & more delivered <br> to your inbox.</p>
-                <button class="flex gap-10 items-center px-6 py-2 text-[#7E7E7E] mx-auto lg:mx-0 bg-white rounded-lg">Your emailaddress <img src="./assets/icons/fleche_footer.svg" alt=""></button>
+                <button class="flex gap-10 items-center px-6 py-2 text-[#7E7E7E] mx-auto lg:mx-0 bg-white rounded-lg">Your emailaddress <img src="../assets/icons/fleche_footer.svg" alt=""></button>
             </div>
         </div>
         <div class="p-5 space-y-8">

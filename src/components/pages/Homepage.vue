@@ -1,5 +1,5 @@
 <template>
-   
+        <!-- HEADER SECTION ----------------------------------------------------------------------------- -->
         <header>
             <div class="flex justify-between items-center bg-[#DBF4E2] ">
                 <div class="max-w-[30em] mx-auto content">
@@ -24,6 +24,8 @@
                 </div>
             </div>
         </header>
+
+        <!-- SECTION CREATE YOUR OWN----------------------------------------------------------------------------- -->
 
         <section class="max-w-[70em] mx-auto">
                 <div class="flex flex-col-reverse lg:flex-row justify-between items-center p-10 lg:p-5">
@@ -51,6 +53,8 @@
                 </div>
         </section>
 
+        <!-- SECTION CUSTOM T-SHIRT ----------------------------------------------------------------------------- -->
+
         <section class="bg-[#F5F5F5]">
                 <div class="max-w-[70em] mx-auto py-12 space-y-8">
                     <h2 class="text-center text-xl font-bold">“We've got custom T-shirts in a range of fits and sizes, so <br> everyone can wear your brand or message.”</h2>
@@ -65,6 +69,8 @@
                     </div>
                 </div>
         </section>
+
+        <!-- SECTION CREATE CUSTOM SHIRT----------------------------------------------------------------- -->
 
         <section class="max-w-[70em] mx-auto py-8 space-y-8">
                 <div class="">
@@ -115,6 +121,8 @@
                 </div>
         </section>
 
+        <!-- SECTION FREE AND EASY WAY--------------------------------------------------------------------------- -->
+
         <section class="bg-[#F5F5F5]">
             <div class="p-8 text-center lg:text-start max-w-[70em] mx-auto py-8 space-y-8">
                 <div class="lg:flex lg:items-center">
@@ -127,6 +135,9 @@
                 </div>
             </div>
         </section>
+
+
+        <!-- SECTION T-SHIRT PRINTING MADE EASY----------------------------------------------------------------------------- -->
 
         <section class="bg-[#F5F5F5]">
             <div class="text-center lg:text-start max-w-[70em] mx-auto p-5 space-y-8">
@@ -149,6 +160,8 @@
                 </div> 
             </div>
         </section>
+
+        <!-- SECTION OUR PICKS FOR YOU----------------------------------------------------------------------------- -->
 
         <section class="text-center lg:text-start max-w-[70em] mx-auto p-5 space-y-8">
                <div class="p-5 space-y-10">
@@ -190,9 +203,13 @@
                </div>
         </section>
 
+        <!-- SECTION THOUSANDS OF FREE TEMPLATES----------------------------------------------------------------------------- -->
+
         <section class="text-center lg:text-start max-w-[70em] mx-auto p-5 space-y-8">
              <Card/>
         </section>
+
+        <!-- SECTION CUSTOMIZE PRODUCTS----------------------------------------------------------------------------- -->
 
         <section class="bg-[#F5F5F5]">
 
@@ -269,6 +286,8 @@
             </div>
         </section>
 
+        <!-- SECTION MORE RESSOURCES----------------------------------------------------------------------------- -->
+
         <section class="text-center lg:text-start max-w-[70em] mx-auto space-y-8">
 
             <div class="p-6 space-y-10">
@@ -309,6 +328,8 @@
                    
             </div>
         </section>
+
+        <!-- SECTION WHAT PEOPLE ARE SAYING----------------------------------------------------------------------------- -->
 
         <section class="text-center lg:text-start max-w-[70em] mx-auto space-y-8 p-8">
             <div class="space-y-4">
@@ -353,9 +374,13 @@
             </div>
         </section>
 
+        <!-- SECTION ENJOY UP YOUR VACCATION----------------------------------------------------------------------------- -->
+
         <section class="bg-[#B479D926]">
              <EnjoyCard/>
         </section>
+
+        <!-- SECTION COMPANIES----------------------------------------------------------------------------- -->
 
         <section class="max-w-[70em] mx-auto">
             <div class="grid grid-cols-2 lg:grid-cols-5 justify-items-center p-6">
@@ -367,11 +392,11 @@
             </div>
         </section>
 
+        <!--FOOTER SECTION ----------------------------------------------------------------------------- -->
+
         <footer class="bg-[#F5F5F5]">
             <myfooter/>
         </footer>
-
-    
 </template>
 
 <script>

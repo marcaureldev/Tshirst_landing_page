@@ -1,31 +1,10 @@
 <template>
+    <!--HEADER SECTION ----------------------------------------------------------------------------- -->
         <header class="sticky top-0 bg-white">
-            <div class="flex justify-between items-center bg-secondary_color p-2">
-                <p class="max-w-[35em] mx-auto text-unregular">Free shipping on all U.S. orders $50+</p>
-                <img src="../../assets/icons/croix.svg" alt="">
-            </div>
-            <div class="lg:flex justify-between items-center p-6 hidden">
-                <Navbar/>
-                <img src="../../assets/images/logo.svg" alt="" class="w-[8em]">
-                <div class="flex items-center gap-4">
-                    <img src="../../assets/icons/search.svg" alt="">
-                    <img src="../../assets/icons/person_icon.svg" alt="">
-                    <p class="relative max-w-6">
-                        <img src="../../assets/icons/etoile.svg" alt="" class="w-20">
-                        <span class="absolute bg-primary_color top-0 text-[10px] text-center
-                         text-white rounded-full right-0 w-3 h-3"> 0
-                        </span>
-                    </p>
-                    <p class="relative max-w-6">
-                        <img src="../../assets/icons/shop.svg" alt="" class="w-20">
-                        <span class="absolute bg-primary_color top-0 text-[10px] text-center
-                         text-white rounded-full right-0 w-3 h-3"> 0
-                        </span>
-                    </p>
-                </div>
-                <button class="px-4 py-3 rounded-lg font-bold border-2">Let's talk</button>
-            </div>
+            <myheader/>
         </header>
+
+        <!-- SECTION OUR TEAM----------------------------------------------------------------------------- -->
 
         <section class="bg-secondary_color">
             <div class="max-w-[70em] mx-auto p-6">
@@ -33,6 +12,8 @@
                 <p class="flex justify-center gap-2 items-center p-5"> <span class="text-third_color">Home</span>  <img src="../../assets/icons/horizontal_line.svg" alt=""> Our team</p>
             </div>
         </section>
+
+        <!-- SECTION MEET THE TEESPACE TEAM----------------------------------------------------------------------------- -->
 
         <section class="max-w-[70em] mx-auto p-8">
             <div class="p-5 space-y-4">
@@ -93,6 +74,8 @@
                 </div>
             </div>
         </section>
+
+        <!-- SECTION MEET THE TEESPACE TEAM----------------------------------------------------------------------------- -->
               
         <section class="bg-behind_color p-8">
 
@@ -163,6 +146,8 @@
             </div>
         </section>
 
+        <!-- SECTION OUR TEAM----------------------------------------------------------------------------- -->
+
         <section class="p-5">
             <div class="max-w-[70em] mx-auto">
                 <div class="p-6">
@@ -231,10 +216,14 @@
                 </div>
             </div>
         </section>
+
+        <!-- SECTION ENJOY UP YOUR VACCATION----------------------------------------------------------------------------- -->
             
         <section  class="bg-[#B479D926]">
             <EnjoyCard/>
         </section>
+
+        <!--FOOTER SECTION ----------------------------------------------------------------------------- -->
 
         <footer class="bg-[#F5F5F5]">
             <myfooter/>
@@ -243,11 +232,13 @@
 </template>
 
 <script>
+import myheader from '../myheader.vue'
 import Navbar from '../Navbar.vue'
 import EnjoyCard from '../EnjoyCard.vue'
 import myfooter from '../myfooter.vue'
 export default {
     components:{
+        myheader,
         Navbar,
         EnjoyCard,
         myfooter,

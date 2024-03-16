@@ -2,7 +2,9 @@
      <div id="app">
         <!-- <Homepage/> -->
         <!-- <Ourteam/> -->
-        <Services/>
+        <!-- <Services/> -->
+        <Services_details/>
+        <!-- <Pricing/> -->
     </div>
 </template>
 
@@ -10,11 +12,15 @@
 import Homepage from './components/pages/Homepage.vue'
 import Ourteam from './components/pages/Ourteam.vue'
 import Services from './components/pages/Services.vue'
+import Services_details from './components/pages/Services_details.vue'
+import Pricing from  "./components/pages/Pricing.vue"
 export default {
     components:{
         Homepage,
         Ourteam,
         Services,
+        Services_details,
+        Pricing,
     }
 }
 </script>

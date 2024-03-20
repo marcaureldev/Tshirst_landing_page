@@ -249,7 +249,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer class="bg-[#F5F5F5]">
         <myfooter/>
     </footer>
 </template>

@@ -103,7 +103,7 @@
                 <img src="../../assets/icons/tshirt-mockup.svg" alt="" class="w-[30em] mx-auto rounded-md">
                 <div class="space-y-5 max-w-[25em] mx-auto px-2">
                     <div class="">
-                        <button class="w-full px-8 py-3 text-white rounded-lg bg-primary_color flex items-center justify-between">Graphic Design Services <img src="../../assets/icons/open_btn.svg" alt=""></button>
+                        <button class="w-full px-8 py-3 text-white rounded-lg bg-primary_color flex items-center justify-between">Graphic Design Services <img src="../../assets/icons/ouverture.svg" alt=""></button>
                         <div>
                             <p class="hidden">
                                 To make a T-shirt design, your first need to install specific graphic design software. Once you’ve done that, start your creation and make
@@ -112,7 +112,7 @@
                         </div>
                     </div>
                     <div>
-                        <button class="w-full px-8 py-3 text-white rounded-lg bg-primary_color flex items-center justify-between">Priting Services<img src="../../assets/icons/open_btn.svg" alt=""></button>
+                        <button class="w-full px-8 py-3 text-white rounded-lg bg-primary_color flex items-center justify-between">Priting Services<img src="../../assets/icons/ouverture.svg" alt=""></button>
                         <div>
                             <p class="hidden">
                                 To make a T-shirt design, your first need to install specific graphic design software. Once you’ve done that, start your creation and make
@@ -121,7 +121,7 @@
                         </div>
                     </div>
                     <div>
-                        <button class="w-full px-8 py-3 text-white rounded-lg bg-primary_color flex items-center justify-between">POD for online Stores<img src="../../assets/icons/open_btn.svg" alt=""></button>
+                        <button class="w-full px-8 py-3 text-white rounded-lg bg-primary_color flex items-center justify-between">POD for online Stores<img src="../../assets/icons/ouverture.svg" alt=""></button>
                         <div>
                             <p class="hidden">
                                 To make a T-shirt design, your first need to install specific graphic design software. Once you’ve done that, start your creation and make
@@ -130,7 +130,7 @@
                         </div>
                     </div>
                     <div>
-                        <button class="w-full px-8 py-3 text-white rounded-lg bg-primary_color flex items-center justify-between">Branding & white-label printing<img src="../../assets/icons/open_btn.svg" alt=""></button>
+                        <button class="w-full px-8 py-3 text-white rounded-lg bg-primary_color flex items-center justify-between">Branding & white-label printing<img src="../../assets/icons/ouverture.svg" alt=""></button>
                         <div>
                             <p class="hidden">
                                 To make a T-shirt design, your first need to install specific graphic design software. Once you’ve done that, start your creation and make

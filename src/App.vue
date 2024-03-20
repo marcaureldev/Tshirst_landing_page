@@ -3,8 +3,12 @@
         <!-- <Homepage/> -->
         <!-- <Ourteam/> -->
         <!-- <Services/> -->
-        <Services_details/>
+        <!-- <Services_details/> -->
         <!-- <Pricing/> -->
+        <!-- <Faq/>  -->
+        <!-- <Blog/>  -->
+        <!-- <Blog_details/> -->
+        <!-- <About/> -->
     </div>
 </template>
 
@@ -14,6 +18,10 @@ import Ourteam from './components/pages/Ourteam.vue'
 import Services from './components/pages/Services.vue'
 import Services_details from './components/pages/Services_details.vue'
 import Pricing from  "./components/pages/Pricing.vue"
+import Faq from "./components/pages/Faq.vue"
+import Blog from "./components/pages/Blog.vue"
+import Blog_details from './components/pages/Blog_details.vue'
+import About from './components/pages/About .vue'
 export default {
     components:{
         Homepage,
@@ -21,6 +29,10 @@ export default {
         Services,
         Services_details,
         Pricing,
+        Faq,
+        Blog,
+        Blog_details,
+        About,
     }
 }
 </script>

@@ -2,10 +2,10 @@
     <div id="app">
         <!-- <Homepage/>
         <Ourteam/>
-        <Services/>
+        <Services/> 
         <Services_details/>
         <Pricing/>
-        <Faq/> 
+         <Faq/> 
         <Blog/> 
         <Blog_details/>
         <About/> -->

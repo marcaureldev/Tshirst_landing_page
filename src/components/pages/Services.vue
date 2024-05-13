@@ -7,16 +7,27 @@
         <!-- SECTION SERVICES----------------------------------------------------------------------------- -->
 
         <section class="bg-secondary_color">
-            <div class="max-w-[70em] mx-auto p-6">
-                <h1 class="text-4xl font-bold text-center">Services</h1>
-                <p class="flex justify-center gap-2 items-center p-5"> <span class="text-third_color">Home</span>  <img src="../../assets/icons/horizontal_line.svg" alt=""> Services</p>
-            </div>
-        </section>
 
+        <div class="max-w-[70em] mx-auto p-6">
+
+            <h1 class="text-4xl font-bold text-center"> Services </h1>
+
+            <div class="flex justify-center gap-2 items-center p-5 font-bold"> 
+
+                <a href="Homepage.vue" class="flex gap-3 items-center"> <img src="../../assets/icons/home.png" alt="" class="w-5"> Home </a>
+
+                <img src="../../assets/icons/superiority_symbol.png" alt="" class="w-5"> 
+
+               <a href="Services.vue">Services</a>
+
+            </div>
+
+        </div>
+    </section>
         <!-- SECTION ALL THE FEATURES YOU NEED----------------------------------------------------------------------------- -->
 
         <section class="max-w-[70em] mx-auto p-5">
-            <div class="">
+            <div class="space-y-5 mt-5">
                 <p class="flex justify-center items-center gap-4 uppercase font-bold"><img src="../../assets/icons/goutte_eau.svg" alt=""> All the features you need</p>
                 <h1 class="text-4xl font-bold text-center p-5">Fast and Quality Service</h1>
 

@@ -1,13 +1,17 @@
 <template>
     <div>
-        <div class="space-y-2 relative w-[15em] h-[20em] bg-center bg-cover bg-no-repeat rounded-xl " :style="changebackground">
+        <div class="flex justify-center items-center space-y-2 relative w-[15em] h-[20em] bg-center bg-cover bg-no-repeat rounded-xl " :style="changebackground">
 
-            <div class="text-white px-5 py-2 bg-primary_color absolute font-bold rounded-lg left-2 top-2">
+            <div class="text-white px-5 py-2 bg-primary_color absolute font-bold rounded-lg left-2 top-2" v-if="props_product.inventory === true">
                 Sale!
             </div>
 
-            <div class="text-white px-5 py-2 bg-unregular absolute font-bold rounded-lg left-2 top-11">
+            <div class="text-white px-5 py-2 bg-unregular absolute font-bold rounded-lg left-2 top-11"  v-if="props_product.categorie === 'tshirt'">
                 New
+            </div>
+
+            <div class="flex justify-center items-center w-[7em] h-[7em] rounded-[3.5em] bg-black bg-opacity-65 text-white" v-if="props_product.categorie === 'tshirt'">
+                Out of Stock
             </div>
         </div>
         <div class="p-5">
@@ -23,7 +27,7 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import { computed } from 'vue' 
 export default {
     props: {
         props_product: Object,

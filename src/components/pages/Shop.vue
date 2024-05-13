@@ -111,27 +111,17 @@
 
                 <div class="space-y-5">
                     <h1 class="text-xl font-bold text-black">Stock status</h1>
+
                     <div class="flex gap-2 items-center">
-                        <input type="checkbox" name="" id="" />
-                        <p class="text-[15px] text-third_color">On sale</p>
+                        <input type="radio" name="" id="inventoryTrue"  @click="filterByInventory(true)"/>
+                        <p class="text-[15px] text-third_color cursor-pointer hover:text-black hover:font-bold">In stock</p>
                     </div>
 
                     <div class="flex gap-2 items-center">
-                        <input type="checkbox" name="" id="" />
-                        <p class="text-[15px] text-third_color cursor-pointer hover:text-black hover:font-bold"
-                            @click="filterByInventory(true)">In stock</p>
+                        <input type="radio" name="" id="inventoryFalse"  @click="filterByInventory(false)"/>
+                        <p class="text-[15px] text-third_color cursor-pointer hover:text-black hover:font-bold">Out of stock</p>
                     </div>
 
-                    <div class="flex gap-2 items-center">
-                        <input type="checkbox" name="" id="" />
-                        <p class="text-[15px] text-third_color cursor-pointer hover:text-black hover:font-bold"
-                            @click="filterByInventory(false)">Out of stock</p>
-                    </div>
-
-                    <div class="flex gap-2 items-center">
-                        <input type="checkbox" name="" id="" />
-                        <p class="text-[15px] text-third_color">On back order</p>
-                    </div>
                 </div>
 
                 <div class="space-y-4">

@@ -25,7 +25,8 @@
                 <div class="space-y-4">
                     <label for="search" class="text-xl font-bold">Search</label>
                     <div class="w-[15em] flex border-2 p-2 rounded-lg">
-                        <input type="text" name="search" placeholder="Search..." class="outline-none" />
+                        <input type="text" name="search" placeholder="Search..." class="outline-none"
+                            v-model="search" />
                         <img src="../../assets/icons/search1.svg" alt="" />
                     </div>
                 </div>
@@ -60,7 +61,7 @@
 
                 <div class="space-y-5">
                     <h1 class="text-xl font-bold">Filter by price</h1>
-                    <input id="minmax-range" type="range" min="10" max="40" value="5" step="3"
+                    <input id="minmax-range" type="range" min="0" max="45" value="5" step="3"
                         class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" v-model="prix" />
                     <div class="flex justify-between items-center">
                         <p><span class="text-third_color">Price:</span> ${{ prix }}</p>
@@ -113,13 +114,15 @@
                     <h1 class="text-xl font-bold text-black">Stock status</h1>
 
                     <div class="flex gap-2 items-center">
-                        <input type="radio" name="" id="inventoryTrue"  @click="filterByInventory(true)"/>
-                        <p class="text-[15px] text-third_color cursor-pointer hover:text-black hover:font-bold">In stock</p>
+                        <input type="radio" name="" id="inventoryTrue" @click="filterByInventory(true)" />
+                        <p class="text-[15px] text-third_color cursor-pointer hover:text-black hover:font-bold">In stock
+                        </p>
                     </div>
 
                     <div class="flex gap-2 items-center">
-                        <input type="radio" name="" id="inventoryFalse"  @click="filterByInventory(false)"/>
-                        <p class="text-[15px] text-third_color cursor-pointer hover:text-black hover:font-bold">Out of stock</p>
+                        <input type="radio" name="" id="inventoryFalse" @click="filterByInventory(false)" />
+                        <p class="text-[15px] text-third_color cursor-pointer hover:text-black hover:font-bold">Out of
+                            stock</p>
                     </div>
 
                 </div>
@@ -149,6 +152,11 @@
                 <Shop_card v-for="(data, i) in data_Product" :key="i" :props_product="data"
                     class="hover:scale-90 ease-in-out duration-500" />
             </section>
+
+
+            <div v-if="data_Product.length === 0" class="font-bold text-5xl mx-auto">
+                Aucun résultat trouvé
+            </div>
         </section>
 
 
@@ -163,7 +171,7 @@ import BDD from "../../BDD.js";
 import myheader from "../myheader.vue";
 import myfooter from "../myfooter.vue";
 import Shop_card from "../Shop_card.vue";
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 export default {
     data() {
         return {
@@ -224,11 +232,20 @@ export default {
         const filterByInventory = (param) => {
             data_Product.value = BDD.filter((bdd) => bdd.inventory == param);
         };
-        
+
+        let search = ref('')
+
+        watch(search, (new_value) => {
+            let regex = RegExp(new_value)
+
+            data_Product.value = BDD.filter((bdd) => regex.test(bdd.name.toLowerCase()))
+        })
+
         onMounted(makeDataProduct);
 
         return {
             data_Product,
+            search,
             filterByCategory,
             filterByColor,
             filterByPrice,

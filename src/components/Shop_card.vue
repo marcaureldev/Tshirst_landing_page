@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div class="flex justify-center items-center space-y-2 relative w-[15em] h-[20em] bg-center bg-cover bg-no-repeat rounded-xl " :style="changebackground">
+        <div class="flex justify-center items-center space-y-2 relative w-[15em] h-[20em] bg-center bg-cover bg-no-repeat rounded-xl animation" :style="changebackground">
 
-            <div class="text-white px-5 py-2 bg-primary_color absolute font-bold rounded-lg left-2 top-2" v-if="props_product.inventory === true">
+            <div class="text-white px-5 py-2 bg-primary_color absolute font-bold rounded-lg left-2 top-2"  v-if="props_product.categorie === 'tshirt'">
                 Sale!
             </div>
 
@@ -10,7 +10,7 @@
                 New
             </div>
 
-            <div class="flex justify-center items-center w-[7em] h-[7em] rounded-[3.5em] bg-black bg-opacity-65 text-white" v-if="props_product.categorie === 'tshirt'">
+            <div class="flex justify-center items-center w-[7em] h-[7em] rounded-[3.5em] bg-black bg-opacity-65 text-white" v-if="props_product.inventory === false">
                 Out of Stock
             </div>
         </div>
@@ -47,4 +47,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+    /* .animation:hover{
+        background-size: 110%;
+    } */
+</style>

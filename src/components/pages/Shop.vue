@@ -114,7 +114,8 @@
                     <h1 class="text-xl font-bold text-black">Stock status</h1>
 
                     <div class="flex gap-2 items-center">
-                        <input type="radio" name="" id="inventoryTrue" @click="filterByInventory(true)" />
+                        <input type="radio" name="" id="inventoryTrue" class="checked:to-current"
+                            @click="filterByInventory(true)" />
                         <p class="text-[15px] text-third_color cursor-pointer hover:text-black hover:font-bold">In stock
                         </p>
                     </div>
@@ -236,7 +237,7 @@ export default {
         let search = ref('')
 
         watch(search, (new_value) => {
-            let regex = RegExp(new_value)
+            let regex = RegExp(new_value.toLowerCase())
 
             data_Product.value = BDD.filter((bdd) => regex.test(bdd.name.toLowerCase()))
         })

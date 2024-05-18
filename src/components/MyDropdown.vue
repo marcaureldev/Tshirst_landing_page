@@ -1,8 +1,8 @@
 <template>
     <div class="card flex justify-content-center">
         <Dropdown ref="dropdown" v-model="selectedCity" :options="options" optionLabel="label"
-            :placeholder="placeholder" @mouseover="openDropdown" @mouseleave="closeDropdown"
-            class="w-full md:w-14rem" />
+            :placeholder="placeholder" 
+            class="w-full md:w-14rem" @change="handleChange" />
     </div>
 </template>
 
@@ -30,12 +30,16 @@ export default {
 
 
     methods: {
-        openDropdown() {
-            this.$refs.dropdown.show(); 
-        },
-        closeDropdown() {
-            this.$refs.dropdown.hide();
+        // openDropdown() {
+        //     this.$refs.dropdown.show(); 
+        // },
+        // closeDropdown() {
+        //     this.$refs.dropdown.hide();
+        // }
+        handleChange(event) {
+            this.$emit('select', event.value.route); // Émet l'événement avec la route associée
         }
+    
     }
 };
 </script>
@@ -43,6 +47,7 @@ export default {
 <style>
 .p-dropdown {
     display: flex;
+    gap: 5px;
     align-items: center;
 }
 

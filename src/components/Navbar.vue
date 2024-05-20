@@ -6,7 +6,10 @@
             </RouterLink>
             <MyDropdown class="cursor-pointer" :options="options1" placeholder="TeeSpace" @select="navigateTo" />
             <MyDropdown class="cursor-pointer" :options="options2" placeholder="Shop" @select="navigateTo" />
-            <MyDropdown class="cursor-pointer" :options="options3" placeholder="Blog" @select="navigateTo" />
+            <!-- <MyDropdown class="cursor-pointer" :options="options3" placeholder="Blog" @select="navigateTo" /> -->
+            <RouterLink to="/blog">
+               <li>Blog</li>
+            </RouterLink>
             <MyDropdown class="cursor-pointer" :options="options4" placeholder="Pages" @select="navigateTo" />
         </ul>
     </nav>
@@ -30,9 +33,6 @@ export default {
             options2: [
                 { label: 'Shop', route: '/shop' },
                 { label: 'Pricing', route: '/pricing' },
-            ],
-            options3: [
-                { label: 'Blog', route: '/blog' },
             ],
             options4: [
                 { label: 'About Us', route: '/about-us' },

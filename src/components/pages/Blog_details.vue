@@ -4,14 +4,7 @@
     </header>
 
     <section class="bg-btn_color">
-
-        <div class="max-w-[70em] mx-auto p-6">
-            <p class="flex justify-center gap-2 items-center p-5 text-[15px]"> 
-                <span class="text-third_color">Home</span> 
-                <img src="../../assets/icons/horizontal_line.svg" alt="">Design Services
-                <img src="../../assets/icons/horizontal_line.svg" alt="">What make you beautiful with us
-            </p>
-        </div>
+        <HeroSection :title="title" :subtitle="subtitle"/>
     </section>
 
     <section class="lg:flex gap-10 max-w-70 mx-auto p-10">
@@ -274,10 +267,19 @@
 <script>
 import myheader from '../myheader.vue'
 import myfooter from '../myfooter.vue';
+import HeroSection from '../HeroSection.vue';
 export default {
+data(){
+return {
+    title: 'Blog Details',
+    subtitle: 'Design Services',
+}
+},
+
     components:{
         myheader,
         myfooter,
+        HeroSection,
     }
 
 }

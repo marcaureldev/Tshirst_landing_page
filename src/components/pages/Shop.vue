@@ -5,145 +5,151 @@
         </header>
 
         <section class="bg-secondary_color">
-            <div class="max-w-[70em] mx-auto p-6">
-                <h1 class="text-4xl font-bold text-center">Shop</h1>
-
-                <div class="flex justify-center gap-2 items-center p-5 font-bold">
-                    <a href="Homepage.vue" class="flex gap-3 items-center">
-                        <img src="../../assets/icons/home.png" alt="" class="w-5" /> Home
-                    </a>
-
-                    <img src="../../assets/icons/superiority_symbol.png" alt="" class="w-5" />
-
-                    <a href="Shop.vue">Shop</a>
-                </div>
-            </div>
+            <HeroSection :title="title" :subtitle="subtitle" />
         </section>
 
-        <section class="flex gap-12 max-w-70 mx-auto p-12">
-            <aside class="hidden lg:block w-[15em] space-y-5 p-2">
-                <div class="space-y-4">
-                    <label for="search" class="text-xl font-bold">Search</label>
-                    <div class="w-[15em] flex border-2 p-2 rounded-lg">
-                        <input type="text" name="search" placeholder="Search..." class="outline-none"
-                            v-model="search" />
-                        <img src="../../assets/icons/search1.svg" alt="" />
+
+        <section class="max-w-70 mx-auto p-12">
+            <button @click="toggleSidebar" class="p-2 bg-black text-white rounded-md m-4">
+                Toggle Filters
+            </button>
+
+            <div v-if="visible" class="fixed inset-0 bg-black bg-opacity-50 z-40" @click="toggleSidebar"></div>
+
+            <aside :class="[
+                'fixed top-0 left-0 h-full bg-white p-4 transition-transform transform z-50',
+                { 'translate-x-0': visible, '-translate-x-full': !visible }
+            ]">
+                <div class="overflow-y-auto h-full p-5">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <label for="search" class="text-xl font-bold">Search</label>
+                            <img src="../../assets/icons/croix.svg" alt="" @click="toggleSidebar"
+                                class="hover:grayscale-0">
+                        </div>
+                        <div class="w-[15em] flex border-2 p-2 rounded-lg">
+                            <input type="text" name="search" placeholder="Search..." class="outline-none"
+                                v-model="search" />
+                            <img src="../../assets/icons/search1.svg" alt="" />
+                        </div>
                     </div>
-                </div>
 
-                <div class="p-2 text-third_color space-y-5">
-                    <h1 class="text-xl font-bold text-black">Product categories</h1>
-                    <p class="flex justify-between items-center text-[14px] cursor-pointer hover:text-black hover:font-bold"
-                        @click="filterByCategory('hoodie')">
-                        Hoodie<span class="text-black">11</span>
-                    </p>
-                    <p class="flex justify-between items-center text-[14px] cursor-pointer hover:text-black hover:font-bold"
-                        @click="filterByCategory('kids')">
-                        Kids<span class="text-black">4</span>
-                    </p>
-                    <p class="flex justify-between items-center text-[14px] cursor-pointer hover:text-black hover:font-bold"
-                        @click="filterByCategory('long sleeve')">
-                        Long Sleeves<span class="text-black">0</span>
-                    </p>
-                    <p class="flex justify-between items-center text-[14px] cursor-pointer hover:text-black hover:font-bold"
-                        @click="filterByCategory('design')">
-                        Design Product<span class="text-black">2</span>
-                    </p>
-                    <p class="flex justify-between items-center text-[14px] cursor-pointer hover:text-black hover:font-bold"
-                        @click="filterByCategory('sweat')">
-                        Sweater<span class="text-black">2</span>
-                    </p>
-                    <p class="flex justify-between items-center text-[14px] cursor-pointer hover:text-black hover:font-bold"
-                        @click="filterByCategory('tshirt')">
-                        T-Shirt<span class="text-black">5</span>
-                    </p>
-                </div>
-
-                <div class="space-y-5">
-                    <h1 class="text-xl font-bold">Filter by price</h1>
-                    <input id="minmax-range" type="range" min="0" max="45" value="5" step="3"
-                        class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" v-model="prix" />
-                    <div class="flex justify-between items-center">
-                        <p><span class="text-third_color">Price:</span> ${{ prix }}</p>
-                        <button class="px-4 py-2 bg-btn_color font-bold rounded-lg cursor-pointer"
-                            @click="filterByPrice(prix)">
-                            Filter
-                        </button>
-                    </div>
-                </div>
-
-                <div class="p-2 text-third_color space-y-5">
-                    <h1 class="text-xl font-bold text-black">Filter by Color</h1>
-                    <p class="flex justify-between items-center text-[14px] cursor-pointer"
-                        @click="filterByColor('black')">
-                        <span class="flex gap-2 items-center"><img src="../../assets/icons/bouton_noir.svg" alt=""
-                                class="w-5" />Black</span>
-                        <span class="text-black">14</span>
-                    </p>
-
-                    <p class="flex justify-between items-center text-[14px] cursor-pointer"
-                        @click="filterByColor('brown')">
-                        <span class="flex gap-2 items-center"><img src="../../assets/icons/bouton_marron.svg" alt=""
-                                class="w-5" />Brown</span>
-                        <span class="text-black">13</span>
-                    </p>
-
-                    <p class="flex justify-between items-center text-[14px] cursor-pointer"
-                        @click="filterByColor('red')">
-                        <span class="flex gap-2 items-center"><img src="../../assets/icons/bouton_red.svg" alt=""
-                                class="w-5" />Red</span>
-                        <span class="text-black">13</span>
-                    </p>
-
-                    <p class="flex justify-between items-center text-[14px] cursor-pointer"
-                        @click="filterByColor('white')">
-                        <span class="flex gap-2 items-center"><img src="../../assets/icons/bouton_white.svg" alt=""
-                                class="w-5" />White</span>
-                        <span class="text-black">13</span>
-                    </p>
-
-                    <p class="flex justify-between items-center text-[14px] cursor-pointer"
-                        @click="filterByColor('yellow')">
-                        <span class="flex gap-2 items-center"><img src="../../assets/icons/bouton_yellow.svg" alt=""
-                                class="w-5" />Yellow</span>
-                        <span class="text-black">13</span>
-                    </p>
-                </div>
-
-                <div class="space-y-5">
-                    <h1 class="text-xl font-bold text-black">Stock status</h1>
-
-                    <div class="flex gap-2 items-center">
-                        <input type="radio" name="" id="inventoryTrue" class="checked:to-current"
-                            @click="filterByInventory(true)" />
-                        <p class="text-[15px] text-third_color cursor-pointer hover:text-black hover:font-bold">In stock
+                    <div class="p-2 text-third_color space-y-5">
+                        <h1 class="text-xl font-bold text-black">Product categories</h1>
+                        <p class="flex justify-between items-center text-[14px] cursor-pointer hover:text-black hover:font-bold"
+                            @click="filterByCategory('hoodie')">
+                            Hoodie<span class="text-black">11</span>
+                        </p>
+                        <p class="flex justify-between items-center text-[14px] cursor-pointer hover:text-black hover:font-bold"
+                            @click="filterByCategory('kids')">
+                            Kids<span class="text-black">4</span>
+                        </p>
+                        <p class="flex justify-between items-center text-[14px] cursor-pointer hover:text-black hover:font-bold"
+                            @click="filterByCategory('long sleeve')">
+                            Long Sleeves<span class="text-black">0</span>
+                        </p>
+                        <p class="flex justify-between items-center text-[14px] cursor-pointer hover:text-black hover:font-bold"
+                            @click="filterByCategory('design')">
+                            Design Product<span class="text-black">2</span>
+                        </p>
+                        <p class="flex justify-between items-center text-[14px] cursor-pointer hover:text-black hover:font-bold"
+                            @click="filterByCategory('sweat')">
+                            Sweater<span class="text-black">2</span>
+                        </p>
+                        <p class="flex justify-between items-center text-[14px] cursor-pointer hover:text-black hover:font-bold"
+                            @click="filterByCategory('tshirt')">
+                            T-Shirt<span class="text-black">5</span>
                         </p>
                     </div>
 
-                    <div class="flex gap-2 items-center">
-                        <input type="radio" name="" id="inventoryFalse" @click="filterByInventory(false)" />
-                        <p class="text-[15px] text-third_color cursor-pointer hover:text-black hover:font-bold">Out of
-                            stock</p>
+                    <div class="space-y-5">
+                        <h1 class="text-xl font-bold">Filter by price</h1>
+                        <input id="minmax-range" type="range" min="0" max="45" value="5" step="3"
+                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" v-model="prix" />
+                        <div class="flex justify-between items-center">
+                            <p><span class="text-third_color">Price:</span> ${{ prix }}</p>
+                            <button class="px-4 py-2 bg-btn_color font-bold rounded-lg cursor-pointer"
+                                @click="filterByPrice(prix)">
+                                Filter
+                            </button>
+                        </div>
                     </div>
 
-                </div>
+                    <div class="p-2 text-third_color space-y-5">
+                        <h1 class="text-xl font-bold text-black">Filter by Color</h1>
+                        <p class="flex justify-between items-center text-[14px] cursor-pointer"
+                            @click="filterByColor('black')">
+                            <span class="flex gap-2 items-center"><img src="../../assets/icons/bouton_noir.svg" alt=""
+                                    class="w-5" />Black</span>
+                            <span class="text-black">14</span>
+                        </p>
 
-                <div class="space-y-4">
-                    <h1 class="text-xl font-bold">Tags</h1>
+                        <p class="flex justify-between items-center text-[14px] cursor-pointer"
+                            @click="filterByColor('brown')">
+                            <span class="flex gap-2 items-center"><img src="../../assets/icons/bouton_marron.svg" alt=""
+                                    class="w-5" />Brown</span>
+                            <span class="text-black">13</span>
+                        </p>
 
-                    <div class="space-y-2">
-                        <div class="grid grid-cols-2 gap-4">
-                            <span class="bg-behind_color text-[12px] p-1 text-third_color text-center">Company</span>
-                            <span class="bg-behind_color text-[12px] p-1 text-third_color">Design Services</span>
+                        <p class="flex justify-between items-center text-[14px] cursor-pointer"
+                            @click="filterByColor('red')">
+                            <span class="flex gap-2 items-center"><img src="../../assets/icons/bouton_red.svg" alt=""
+                                    class="w-5" />Red</span>
+                            <span class="text-black">13</span>
+                        </p>
+
+                        <p class="flex justify-between items-center text-[14px] cursor-pointer"
+                            @click="filterByColor('white')">
+                            <span class="flex gap-2 items-center"><img src="../../assets/icons/bouton_white.svg" alt=""
+                                    class="w-5" />White</span>
+                            <span class="text-black">13</span>
+                        </p>
+
+                        <p class="flex justify-between items-center text-[14px] cursor-pointer"
+                            @click="filterByColor('yellow')">
+                            <span class="flex gap-2 items-center"><img src="../../assets/icons/bouton_yellow.svg" alt=""
+                                    class="w-5" />Yellow</span>
+                            <span class="text-black">13</span>
+                        </p>
+                    </div>
+
+                    <div class="space-y-5">
+                        <h1 class="text-xl font-bold text-black">Stock status</h1>
+
+                        <div class="flex gap-2 items-center">
+                            <input type="radio" name="" id="inventoryTrue" class="checked:to-current"
+                                @click="filterByInventory(true)" />
+                            <p class="text-[15px] text-third_color cursor-pointer hover:text-black hover:font-bold">
+                                In stock
+                            </p>
                         </div>
-                        <div class="grid grid-cols-3 gap-8">
-                            <span class="bg-behind_color text-[12px] p-1 text-third_color w-20">HaruTheme</span>
-                            <span class="bg-behind_color text-[12px] p-1 text-third_color w-14">Pricom</span>
-                            <span class="bg-behind_color text-[12px] p-1 text-third_color w-14">Print</span>
+
+                        <div class="flex gap-2 items-center">
+                            <input type="radio" name="" id="inventoryFalse" @click="filterByInventory(false)" />
+                            <p class="text-[15px] text-third_color cursor-pointer hover:text-black hover:font-bold">
+                                Out of stock
+                            </p>
                         </div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <span class="bg-behind_color text-[12px] p-1 text-third_color w-14">Printing</span>
-                            <span class="bg-behind_color text-[12px] p-1 text-third_color w-16">Printshop</span>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h1 class="text-xl font-bold">Tags</h1>
+
+                        <div class="space-y-2">
+                            <div class="grid grid-cols-2 gap-4">
+                                <span
+                                    class="bg-behind_color text-[12px] p-1 text-third_color text-center">Company</span>
+                                <span class="bg-behind_color text-[12px] p-1 text-third_color">Design Services</span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-8">
+                                <span class="bg-behind_color text-[12px] p-1 text-third_color w-20">HaruTheme</span>
+                                <span class="bg-behind_color text-[12px] p-1 text-third_color w-14">Pricom</span>
+                                <span class="bg-behind_color text-[12px] p-1 text-third_color w-14">Print</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2">
+                                <span class="bg-behind_color text-[12px] p-1 text-third_color w-14">Printing</span>
+                                <span class="bg-behind_color text-[12px] p-1 text-third_color w-16">Printshop</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -154,12 +160,10 @@
                     class="hover:scale-90 ease-in-out duration-500" />
             </section>
 
-
-            <div v-if="data_Product.length === 0" class="font-bold text-5xl mx-auto">
+            <div v-if="data_Product.length === 0" class="font-bold text-5xl text-center">
                 Aucun résultat trouvé
             </div>
         </section>
-
 
         <footer class="bg-[#F5F5F5]">
             <myfooter />
@@ -170,6 +174,7 @@
 <script>
 import BDD from "../../BDD.js";
 import myheader from "../myheader.vue";
+import HeroSection from "../HeroSection.vue";
 import myfooter from "../myfooter.vue";
 import Shop_card from "../Shop_card.vue";
 import { onMounted, ref, watch } from "vue";
@@ -177,10 +182,13 @@ export default {
     data() {
         return {
             prix: 0,
+            title: "Shop",
+            subtitle: "Shop",
         };
     },
     components: {
         myheader,
+        HeroSection,
         Shop_card,
         myfooter,
     },
@@ -198,6 +206,7 @@ export default {
         }
 
         let data_Product = ref([]);
+        let visible = ref(false);
 
         const makeDataProduct = () => {
             for (const product of BDD) {
@@ -234,13 +243,19 @@ export default {
             data_Product.value = BDD.filter((bdd) => bdd.inventory == param);
         };
 
-        let search = ref('')
+        let search = ref("");
 
         watch(search, (new_value) => {
-            let regex = RegExp(new_value.toLowerCase())
+            let regex = RegExp(new_value.toLowerCase());
 
-            data_Product.value = BDD.filter((bdd) => regex.test(bdd.name.toLowerCase()))
-        })
+            data_Product.value = BDD.filter((bdd) =>
+                regex.test(bdd.name.toLowerCase())
+            );
+        });
+
+        const toggleSidebar = () => {
+            visible.value = !visible.value;
+        };
 
         onMounted(makeDataProduct);
 
@@ -251,6 +266,8 @@ export default {
             filterByColor,
             filterByPrice,
             filterByInventory,
+            visible,
+            toggleSidebar,
         };
     },
 };

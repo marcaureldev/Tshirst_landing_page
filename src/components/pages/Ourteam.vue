@@ -7,21 +7,7 @@
     <!-- SECTION OUR TEAM----------------------------------------------------------------------------- -->
 
     <section class="bg-secondary_color">
-        <div class="max-w-[70em] mx-auto p-6">
-
-            <h1 class="text-4xl font-bold text-center">Our Team</h1>
-
-            <div class="flex justify-center gap-2 items-center p-5 font-bold"> 
-
-                <a href="Homepage.vue" class="flex gap-3 items-center"> <img src="../../assets/icons/home.png" alt="" class="w-5"> Home </a>
-
-                <img src="../../assets/icons/superiority_symbol.png" alt="" class="w-5"> 
-
-               <a href="Ourteam.vue"> Our team </a>
-
-            </div>
-
-        </div>
+        <HeroSection :title="title" :subtitle="subtitle" />
     </section>
 
     <!-- SECTION MEET THE TEESPACE TEAM----------------------------------------------------------------------------- -->
@@ -246,15 +232,24 @@
 
 <script>
 import myheader from '../myheader.vue'
+import HeroSection from '../HeroSection.vue'
 import Navbar from '../Navbar.vue'
 import EnjoyCard from '../EnjoyCard.vue'
 import myfooter from '../myfooter.vue'
 export default {
+    data() {
+        return {
+            title: 'Our Team',
+            subtitle: 'Our team',
+        }
+    },
+
     components: {
         myheader,
         Navbar,
         EnjoyCard,
         myfooter,
+        HeroSection,
     }
 
 }

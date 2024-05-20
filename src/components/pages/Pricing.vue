@@ -4,24 +4,9 @@
     </header>
 
     <section class="bg-secondary_color">
-
-        <div class="max-w-[70em] mx-auto p-6 space-y-5">
-
-            <h1 class="text-4xl font-bold text-center"> Pricing Plans </h1>
-
-            <div class="flex justify-center gap-2 items-center p-5 font-bold">
-
-                <a href="Homepage.vue" class="flex gap-3 items-center"> <img src="../../assets/icons/home.png" alt=""
-                        class="w-5"> Home </a>
-
-                <img src="../../assets/icons/superiority_symbol.png" alt="" class="w-5">
-
-                <a href="Pricing.vue">Pricing Plans</a>
-
-            </div>
-
-        </div>
+        <HeroSection :title="'Pricing Plans'" :subtitle="'Pricing Plans'" />
     </section>
+
 
     <section>
 
@@ -73,7 +58,8 @@
                                 <input type="checkbox" class="sr-only" @change="handleCheckboxChange" />
                                 <div class="block h-12 w-48 rounded-lg bg-secondary_color font-bold p-2"> 3 months</div>
                                 <div :class="{ '-translate-x-full !bg-primary': isChecked }"
-                                    class="dot absolute right-1 top-1 h-9 w-[5.75em] rounded-lg bg-white transition p-1 font-bold">Forever</div>
+                                    class="dot absolute right-1 top-1 h-9 w-[5.75em] rounded-lg bg-white transition p-1 font-bold">
+                                    Forever</div>
                             </div>
                         </label>
                     </div>
@@ -86,7 +72,8 @@
                                 <input type="checkbox" class="sr-only" @change="handleCheckboxChange1" />
                                 <div class="block h-12 w-48 rounded-lg bg-secondary_color font-bold p-2"> Personal</div>
                                 <div :class="{ '-translate-x-full !bg-primary': isChecked1 }"
-                                    class="dot absolute right-1 top-1 h-9 w-[5.75em] rounded-lg bg-white transition p-1 font-bold">Corporate</div>
+                                    class="dot absolute right-1 top-1 h-9 w-[5.75em] rounded-lg bg-white transition p-1 font-bold">
+                                    Corporate</div>
                             </div>
                         </label>
                     </div>
@@ -245,21 +232,22 @@
     </footer>
 </template>
 
-<script  setup>
+<script setup>
 import { ref } from 'vue'
 import myheader from '../myheader.vue'
 import myfooter from '../myfooter.vue'
+import HeroSection from '../HeroSection.vue'
 
 const isChecked = ref(false)
 
 const handleCheckboxChange = () => {
-  isChecked.value = !isChecked.value
+    isChecked.value = !isChecked.value
 }
 
 const isChecked1 = ref(false)
 
 const handleCheckboxChange1 = () => {
-  isChecked1.value = !isChecked1.value
+    isChecked1.value = !isChecked1.value
 }
 // export default {
 //     components: {

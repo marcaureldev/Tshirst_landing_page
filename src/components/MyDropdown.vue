@@ -45,21 +45,4 @@ export default {
 </script>
 
 <style>
-.p-dropdown {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-}
-
-.p-dropdown-panel {
-    width: 9em;
-    padding: 5px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    border: 1px solid #808080ae;
-}
-
-.p-dropdown-item {
-    padding: 2px;
-}
 </style>

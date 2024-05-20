@@ -8,7 +8,7 @@
 
         <section class="bg-secondary_color">
 
-        <div class="max-w-[70em] mx-auto p-6">
+        <!-- <div class="max-w-[70em] mx-auto p-6">
 
             <h1 class="text-4xl font-bold text-center"> Services </h1>
 
@@ -22,7 +22,9 @@
 
             </div>
 
-        </div>
+        </div> -->
+
+        <HeroSection :title="title" :subtitle="subtitle"/>
     </section>
         <!-- SECTION ALL THE FEATURES YOU NEED----------------------------------------------------------------------------- -->
 
@@ -271,12 +273,21 @@
 import Navbar from '../Navbar.vue'
 import myfooter from '../myfooter.vue'
 import myheader from '../myheader.vue'
+import HeroSection from '../HeroSection.vue';
 
 export default {
+    data() {
+        return {
+            title : 'Services',
+            subtitle: 'Services'
+        }
+    },
+
     components:{
         myheader,
         Navbar,
         myfooter,
+        HeroSection,
     }
 
 }

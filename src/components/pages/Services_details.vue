@@ -4,22 +4,7 @@
     </header>
 
     <section class="bg-secondary_color">
-
-        <div class="max-w-[70em] mx-auto p-6 space-y-5">
-
-            <h1 class="text-4xl font-bold text-center"> Services Details </h1>
-
-            <div class="flex justify-center gap-2 items-center p-5 font-bold">
-
-                <a href="Homepage.vue" class="flex gap-3 items-center"> <img src="../../assets/icons/home.png" alt="" class="w-5"> Home </a>
-
-                <img src="../../assets/icons/superiority_symbol.png" alt="" class="w-5">
-
-                <a href="Services.vue">Services Details</a>
-
-            </div>
-
-        </div>
+        <HeroSection :title="title" :subtitle="subtitle" />
     </section>
 
     <section class="max-w-[70em] mx-auto p-10">
@@ -321,48 +306,54 @@
 
 <script>
 import Shipping from '../../assets/icons/shipping_worlwide.svg'
+import HeroSection from '../HeroSection.vue';
 import myheader from '../myheader.vue'
 import myfooter from '../myfooter.vue'
 export default {
     data() {
         return {
-            Shipping: Shipping
+            Shipping: Shipping,
+            title: 'Services Détails',
+            subtitle: 'Services Détails',
         }
     },
     components: {
         myheader,
         myfooter,
+        HeroSection,
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.querySelector('.btn');
-    const img = document.querySelector('.img');
-    const accordeon = document.querySelector('.accordeon');
-    const image = document.querySelector('#image')
-    const closebtn = new Image
-    closebtn.src = '../../assets/icons/ouverture.svg';
+// document.addEventListener('DOMContentLoaded', () => {
+//     const btn = document.querySelector('.btn');
+//     const img = document.querySelector('.img');
+//     const accordeon = document.querySelector('.accordeon');
+//     const image = document.querySelector('#image')
+//     const closebtn = new Image
+//     closebtn.src = '../../assets/icons/ouverture.svg';
 
-    btn.addEventListener("click", function () {
-        if (accordeon.classList.contains('hidden')) {
-            accordeon.classList.remove('hidden')
-            btn.style.background = '#2EBB77'
-            btn.style.color = '#fff'
-            btn.innerHTML = 'How does product customization work?'
-            btn.appendChild(closebtn)
-            console.log(btn)
+//     btn.addEventListener("click", function () {
+//         if (accordeon.classList.contains('hidden')) {
+//             accordeon.classList.remove('hidden')
+//             btn.style.background = '#2EBB77'
+//             btn.style.color = '#fff'
+//             btn.innerHTML = 'How does product customization work?'
+//             btn.appendChild(closebtn)
+//             console.log(btn)
 
-        }
-        else {
-            accordeon.classList.add('hidden')
-            btn.style.background = ''
-            btn.style.color = ''
-            btn.innerHTML = 'How does product customization work?'
-            btn.appendChild(image)
-        }
-    })
+//         }
+//         else {
+//             accordeon.classList.add('hidden')
+//             btn.style.background = ''
+//             btn.style.color = ''
+//             btn.innerHTML = 'How does product customization work?'
+//             btn.appendChild(image)
+//         }
+//     })
 
-})
+
+// })
+
 </script>
 
 <style></style>

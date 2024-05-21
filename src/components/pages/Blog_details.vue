@@ -6,7 +6,7 @@
     <section class="bg-btn_color">
         <HeroSection :title="title" :subtitle="subtitle" />
     </section>
-
+    <ToogleButton />
     <section class="flex md:gap-10 max-w-70 mx-auto p-5">
         <MyAsideBar />
         <DSideBar />
@@ -68,8 +68,8 @@
                     </p>
                 </div>
 
-                <div class="md:flex justify-between items-center p-2 space-y-4 lg:space-y-0">
-                    <div class="flex gap-4">
+                <div class="lg:flex justify-between items-center p-2 space-y-4 md:space-y-0">
+                    <div class="flex gap-4 py-4">
                         <p class="text-[14px] text-third_color">#company</p>
                         <p class="text-[14px] text-third_color">#printing</p>
                         <p class="text-[14px] text-third_color">#printshop</p>
@@ -113,43 +113,61 @@
 
             <div class="space-y-5 p-5">
                 <h1 class="font-bold text-center text-xl">You may also like this</h1>
-                <div class="flex flex-col md:flex-row justify-center gap-5 items-center space-y-5">
+                <div class="flex flex-col md:flex-row justify-center gap-5 items-center space-y-5 lg:space-y-0">
                     <BDComponent v-for="(element, index) in tableau" :key="index" :propriete="element" />
                 </div>
             </div>
             <hr />
 
-
             <div class="py-5">
                 <h1 class="font-bold text-center text-xl">There are 3 comments</h1>
-                <AdminComponent  v-for="(element, i) in admintab" :key="i" :admin_props="element" />
+                <AdminComponent v-for="(element, i) in admintab" :key="i" :admin_props="element" />
             </div>
-        </section>
 
-        <!-- <section class="max-w-55 mx-auto">
-
-            <div>
+            <div class="">
                 <h1 class="font-bold text-center text-xl">Leave us a comment</h1>
 
-                <form action="" class="w-[50em] mx-auto">
-                    <div class="lg:flex gap-8 p-5">
-                        <input type="text" name="nom" placeholder="Enter Your Name*"
-                            class="outline-none w-[27em] h-10 p-5 rounded-lg bg-btn_color" />
-                        <input type="email" name="email" placeholder="Enter Your Email*"
-                            class="outline-none w-[27em] h-10 p-5 rounded-lg bg-btn_color" />
-                    </div>
+                <div class="flex items-center justify-center p-12">
 
-                    <input type="text" name="message" class="h-32 p-5 bg-btn_color rounded-lg outline-none" />
-                    <div class="flex gap-2 items-center">
-                        <input type="radio" name="" />
-                        <p class="text-third_color text-[14px] py-5">
-                            Save my name, email, and website in this browser for the next time
-                            I comment.
-                        </p>
+                    <div class="mx-auto w-full">
+                        <form action="" class="text-center">
+                            <div class="-mx-3 flex flex-wrap">
+
+                                <div class="w-full px-3 sm:w-1/2">
+                                    <div class="mb-5">
+                                        <input type="text" name="name" id="name" placeholder="Entrer votre nom*"
+                                            class="w-full rounded-md bg-btn_color py-2 px-6 text-base font-medium text-[#6B7280] outline-none" />
+                                    </div>
+                                </div>
+
+                                <div class="w-full px-3 sm:w-1/2">
+                                    <div class="mb-5">
+                                        <input type="email" name="email" id="email" placeholder="Entrer votre email*"
+                                            class="w-full rounded-md  bg-btn_color py-2 px-6 text-base outline-none" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-5">
+                                <input type="text" name="message" id="message"
+                                    class="w-full rounded-md bg-btn_color py-2 px-6 text-base outline-none h-[8em]" />
+                            </div>
+
+                            <div class=" flex justify-center gap-2 items-center mb-5">
+                                <input type="checkbox" />
+                                <label for="" class="text-sm text-third_color">Save my name, email, and website in this
+                                    browser for the next time I comment.</label>
+                            </div>
+
+                            <button
+                                class="rounded-md bg-primary_color py-3 px-8 text-base font-semibold text-white outline-none">
+                                Post Comment
+                            </button>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
-        </section> -->
+        </section>
     </section>
 
     <footer class="bg-[#F5F5F5]">
@@ -158,13 +176,16 @@
 </template>
 
 <script>
+import { ref, provide } from 'vue';
 import myheader from "../myheader.vue";
 import MyAsideBar from "../MyAsideBar.vue";
 import DSideBar from "../DSideBar.vue";
 import myfooter from "../myfooter.vue";
 import HeroSection from "../HeroSection.vue";
 import BDComponent from "../BDComponent.vue";
-import AdminComponent from '../AdminComponent.vue';
+import AdminComponent from "../AdminComponent.vue";
+import ToogleButton from '../ToogleButton.vue';
+
 export default {
     data() {
         return {
@@ -222,7 +243,17 @@ export default {
         DSideBar,
         BDComponent,
         AdminComponent,
+        ToogleButton,
     },
+
+    setup() {
+        const visible = ref(false);
+        provide('visible', visible);
+
+        return {
+            visible
+        };
+    }
 };
 </script>
 

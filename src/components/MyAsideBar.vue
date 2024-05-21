@@ -92,22 +92,29 @@
             </div>
         </Sidebar>
 
-        <Button icon="pi pi-arrow-right" @click="visible = true" />
+        <!-- <Button icon="pi pi-arrow-right" @click="visible = true" /> -->
     </div>
 </template>
 
 <script>
 import Button from 'primevue/button';
 import Sidebar from 'primevue/sidebar';
+import { inject } from 'vue';
+
 export default {
-    data() {
-        return {
-            visible: false
-        }
-    },
     components: {
         Sidebar,
         Button,
+    },
+
+
+    setup() {
+        const visible = inject('visible');
+
+        return {
+            visible
+        };
+
     }
 }
 </script>

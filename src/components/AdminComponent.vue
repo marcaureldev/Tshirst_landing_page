@@ -1,5 +1,5 @@
 <template>
-    <div class="flex gap-5 items-center p-4">
+    <div class="md:flex gap-5 items-center p-4">
         <img :src="admin_props.img" alt="" />
         <div class="text-third_color text-[13px] space-y-2">
             <p class="font-bold text-black">Admin</p>

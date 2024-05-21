@@ -48,17 +48,12 @@
 
                 <div class="space-y-4">
                     <p class="text-third_color text-start text-sm leading-relaxed">
-                        Fusce eget malesuada eros. Vivamus eros dolor, auctor aliquet dolor
-                        sit amet, euismod imperdiet ex. Nam sed nulla sed massa suscipit
-                        feugiat. Mauris et nunc ornare, placerat ex ac, interdum magna.
-                        Vestibulum urna massa, hendrerit sed fringilla in, mollis vitae
-                        tellus. Vestibulum mattis nulla elementum tristique fringilla. Morbi
-                        in sollicitudin erat. Ut quis tristique mauris. Proin risus purus,
-                        iaculis a orci ut, cursus bibendum panisl. Duis aliquam gravida eros
-                        eget molestie. Class aptent taciti sociosqu ad litora torquent per
-                        conubia nostra, per inceptos himenaeos. Suspendisse pharetra, arcu
-                        eu porta aliquet, eros dui tincidunt purus, eu vehicula magna nisl
-                        in purus.
+                        Fusce eget malesuada eros. Vivamus eros dolor, auctor aliquet dolor sit amet, euismod imperdiet ex. Nam sed nulla sed massa
+                        suscipit feugiat. Mauris et nunc ornare, placerat ex ac, interdum magna. Vestibulum urna massa, hendrerit sed fringilla in, 
+                        mollis vitae tellus. Vestibulum mattis nulla elementum tristique fringilla. Morbi in sollicitudin erat. Ut quis tristique mauris. 
+                        Proin risus purus, iaculis a orci ut, cursus bibendum panisl. Duis aliquam gravida eros eget molestie. Class aptent taciti sociosqu
+                        ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse pharetra, arcu eu porta aliquet, eros dui tincidunt purus,
+                        eu vehicula magna nisl in purus.
                     </p>
 
                     <p class="text-third_color text-start text-sm leading-relaxed">
@@ -135,7 +130,7 @@
 
                                 <div class="w-full px-3 sm:w-1/2">
                                     <div class="mb-5">
-                                        <input type="text" name="name" id="name" placeholder="Entrer votre nom*"
+                                        <input type="text" name="nom" id="nom" placeholder="Entrer votre nom*"
                                             class="w-full rounded-md bg-btn_color py-2 px-6 text-base font-medium text-[#6B7280] outline-none" />
                                     </div>
                                 </div>
@@ -154,7 +149,7 @@
                             </div>
 
                             <div class=" flex justify-center gap-2 items-center mb-5">
-                                <input type="checkbox" />
+                                <input type="checkbox" name="check" id="chek"/>
                                 <label for="" class="text-sm text-third_color">Save my name, email, and website in this
                                     browser for the next time I comment.</label>
                             </div>

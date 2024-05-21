@@ -15,9 +15,9 @@
             <div class="space-y-6 p-2 text-center">
                 <div class="space-y-4">
                     <p class="text-primary_color bg-btn_color text-sm p-2 inline rounded-xl">
-                        Design Services
+                        {{ found.header }}
                     </p>
-                    <h1 class="font-bold md:text-3xl">What make you beautiful with us</h1>
+                    <h1 class="font-bold md:text-3xl">{{ found.subheader }}</h1>
                     <div class="flex flex-wrap justify-center gap-2 items-center">
                         <span class="text-third_color text-sm">August 20, 2022 --- </span>
                         <p class="">
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-                <img src="../../assets/images/beautiful.svg" alt="" class="w-full mx-auto" />
+                <img :src="found.picture" alt="" class="w-full mx-auto" />
                 <p class="text-third_color text-start text-sm">
                     Nullam imperdiet, sem at fringilla lobortis, sem nibh fringilla nibh,
                     idae gravida mi purus sit amet erat. Ut dictum nisi massa. Maecenas id
@@ -48,11 +48,16 @@
 
                 <div class="space-y-4">
                     <p class="text-third_color text-start text-sm leading-relaxed">
-                        Fusce eget malesuada eros. Vivamus eros dolor, auctor aliquet dolor sit amet, euismod imperdiet ex. Nam sed nulla sed massa
-                        suscipit feugiat. Mauris et nunc ornare, placerat ex ac, interdum magna. Vestibulum urna massa, hendrerit sed fringilla in, 
-                        mollis vitae tellus. Vestibulum mattis nulla elementum tristique fringilla. Morbi in sollicitudin erat. Ut quis tristique mauris. 
-                        Proin risus purus, iaculis a orci ut, cursus bibendum panisl. Duis aliquam gravida eros eget molestie. Class aptent taciti sociosqu
-                        ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse pharetra, arcu eu porta aliquet, eros dui tincidunt purus,
+                        Fusce eget malesuada eros. Vivamus eros dolor, auctor aliquet dolor sit amet, euismod imperdiet
+                        ex. Nam sed nulla sed massa
+                        suscipit feugiat. Mauris et nunc ornare, placerat ex ac, interdum magna. Vestibulum urna massa,
+                        hendrerit sed fringilla in,
+                        mollis vitae tellus. Vestibulum mattis nulla elementum tristique fringilla. Morbi in
+                        sollicitudin erat. Ut quis tristique mauris.
+                        Proin risus purus, iaculis a orci ut, cursus bibendum panisl. Duis aliquam gravida eros eget
+                        molestie. Class aptent taciti sociosqu
+                        ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse pharetra, arcu eu
+                        porta aliquet, eros dui tincidunt purus,
                         eu vehicula magna nisl in purus.
                     </p>
 
@@ -149,7 +154,7 @@
                             </div>
 
                             <div class=" flex justify-center gap-2 items-center mb-5">
-                                <input type="checkbox" name="check" id="chek"/>
+                                <input type="checkbox" name="check" id="chek" />
                                 <label for="" class="text-sm text-third_color">Save my name, email, and website in this
                                     browser for the next time I comment.</label>
                             </div>
@@ -184,6 +189,7 @@ import ToogleButton from '../ToogleButton.vue';
 export default {
     data() {
         return {
+            found: null,
             title: "Blog Details",
             subtitle: "Design Services",
 
@@ -227,9 +233,47 @@ export default {
                     reponse: "Reply",
                 },
             ],
+
+            blog: [
+                {
+                    header: 'Design Services',
+                    subheader: 'Make yourself happy with our T-shirt customer designer',
+                    picture: 'src/assets/images/acticel.svg',
+                },
+
+                {
+                    header: 'Print Company',
+                    subheader: 'Are you ready to make it awesome with us?',
+                    picture: 'src/assets/images/acticel_1.svg',
+                },
+
+                {
+                    header: 'Print Company',
+                    subheader: 'The best custom T-shirt designer WordPress theme',
+                    picture: 'src/assets/images/print_company.svg',
+                },
+
+                {
+                    header: 'Print Shop',
+                    subheader: 'We can make your work better',
+                    picture: 'src/assets/images/print_shop.svg',
+                },
+
+                {
+                    header: 'Print Company',
+                    subheader: 'Let say it your way',
+                    picture: 'src/assets/images/print_shop.svg',
+                },
+            ],
         };
+
     },
 
+    created() {
+        this.found = this.blog.find((element) => this.$route.params.subheader === element.subheader)
+    },
+
+    
     components: {
         myheader,
         myfooter,
@@ -246,7 +290,7 @@ export default {
         provide('visible', visible);
 
         return {
-            visible
+            visible,
         };
     }
 };

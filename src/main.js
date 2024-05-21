@@ -26,7 +26,7 @@ const routes = [
     {path: '/shop', component: Shop},
     {path: '/pricing', component: Pricing},
     {path: '/blog', component: Blog},
-    {path: '/blog-details', component: Blog_details},
+    {name: 'Blog_details', path: '/blog-details/:subheader', component: Blog_details},
     {path: '/about-us', component: About},
     {path: '/faqs', component: Faq},
 ];

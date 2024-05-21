@@ -24,8 +24,7 @@
                     <div class="space-y-4">
                         <div class="flex justify-between items-center">
                             <label for="search" class="text-xl font-bold">Search</label>
-                            <img src="../../assets/icons/croix.svg" alt="" @click="toggleSidebar"
-                                class="hover:grayscale-0">
+                            <img src="../../assets/icons/croix.svg" alt="" @click="toggleSidebar">
                         </div>
                         <div class="w-[15em] flex border-2 p-2 rounded-lg">
                             <input type="text" name="search" placeholder="Search..." class="outline-none"

@@ -1,16 +1,16 @@
 <template>
     <nav>
-        <ul class="flex items-center gap-6 font-bold">
+        <ul class="lg:flex items-center gap-6 font-bold">
             <RouterLink to="/">
                 <li class="active:text-[rgb(46,187,119)]">Home</li>
             </RouterLink>
-            <MyDropdown class="cursor-pointer" :options="options1" placeholder="TeeSpace" @select="navigateTo" />
-            <MyDropdown class="cursor-pointer" :options="options2" placeholder="Shop" @select="navigateTo" />
-            <!-- <MyDropdown class="cursor-pointer" :options="options3" placeholder="Blog" @select="navigateTo" /> -->
+            <MyDropdown class="cursor-pointer custom-dropdown" :options="options1" placeholder="TeeSpace"
+                @select="navigateTo" />
+            <MyDropdown class="cursor-pointer custom-dropdown" :options="options2" placeholder="Shop" @select="navigateTo" />
             <RouterLink to="/blog">
-               <li>Blog</li>
+                <li>Blog</li>
             </RouterLink>
-            <MyDropdown class="cursor-pointer" :options="options4" placeholder="Pages" @select="navigateTo" />
+            <MyDropdown class="cursor-pointer custom-dropdown" :options="options4" placeholder="Pages" @select="navigateTo" />
         </ul>
     </nav>
 </template>
@@ -49,4 +49,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.custom-dropdown .p-dropdown-label.p-placeholder {
+  color: #000; 
+  font-weight: bold;
+}
+</style>

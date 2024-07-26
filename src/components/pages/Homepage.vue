@@ -1,33 +1,7 @@
 <template>
     <!-- HEADER SECTION ----------------------------------------------------------------------------- -->
     <header>
-        <div class="flex justify-between items-center bg-[#DBF4E2]">
-            <div class="max-w-[30em] mx-auto content">
-                <p class="flex items-center gap-3 p-2">
-                    <img src="../../assets/icons/fire.svg" alt="" />
-                    Free shipping on all U.S. orders $50+
-                    <button class="bg-white p-2 rounded-lg">Shop Now</button>
-                </p>
-            </div>
-            <img src="../../assets/icons/croix.svg" alt="" class="btn" />
-        </div>
-        <div class="hidden lg:flex lg:justify-between lg:items-center max-w-[80em] mx-auto p-5">
-            <img src="../../assets/images/logo.svg" alt="" class="w-[8em]" />
-            <div class="flex gap-3 items-center">
-                <Navbar />
-                <img src="../../assets/icons/search.svg" alt="" />
-            </div>
-            <div class="flex gap-3 items-center">
-                <img src="../../assets/icons/shop1.svg" alt="" />
-                <p class="text-[12px] font-bold">
-                    <span class="text-[#9B9B9B]">HOTLINE: </span><br />
-                    00 1900 8188
-                </p>
-                <button class="bg-black text-white px-4 py-2 rounded-lg">
-                    Sign Up
-                </button>
-            </div>
-        </div>
+        <MyHeader />
     </header>
 
     <!-- SECTION CREATE YOUR OWN----------------------------------------------------------------------------- -->
@@ -52,15 +26,12 @@
                     </button>
                 </div>
                 <div class="flex justify-between items-center gap-5 max-w-[25em]">
-                    <div>
-                        <h1 class="text-4xl font-bold">4k+</h1>
-                        <p class="text-[#7E7E7E]">Collections</p>
+
+                    <div v-for="stat in stats" :key="stat.name">
+                        <h1 class="text-4xl font-bold"> {{ stat.value }}k+</h1>
+                        <p class="text-[#7E7E7E]">{{ stat.name }}</p>
                     </div>
-                    <img src="../../assets/icons/line.svg" alt="" />
-                    <div>
-                        <h1 class="text-4xl font-bold">9k+</h1>
-                        <p class="text-[#7E7E7E]">items trusted to deliver</p>
-                    </div>
+
                 </div>
             </div>
             <img src="../../assets/images/hero_section.svg" alt="" class="w-[35em]" />
@@ -495,9 +466,35 @@ import Navbar from "../Navbar.vue";
 import Card from "../Card.vue";
 import myfooter from "../myfooter.vue";
 import EnjoyCard from "../EnjoyCard.vue";
+import MyHeader from '../MyHeader.vue';
 
 export default {
+    data() {
+        return {
+            stats: [
+                { name: 'Collections', value: 0, target: 4 },
+                { name: 'Items trusted  to deliver', value: 0, target: 9 },
+            ]
+        };
+    },
+    mounted() {
+        this.incrementStats();
+    },
+    methods: {
+        incrementStats() {
+            this.stats.forEach((stat) => {
+                const incrementInterval = setInterval(() => {
+                    if (stat.value < stat.target) {
+                        stat.value++;
+                    } else {
+                        clearInterval(incrementInterval);
+                    }
+                }, 100);
+            });
+        }
+    },
     components: {
+        MyHeader,
         Navbar,
         Card,
         myfooter,

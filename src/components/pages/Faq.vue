@@ -1,6 +1,6 @@
 <template>
     <header>
-        <myheader />
+        <MyHeader />
     </header>
 
     <section class="bg-btn_color">
@@ -370,9 +370,9 @@
 </template>
 
 <script>
-import myheader from '../myheader.vue'
 import myfooter from '../myfooter.vue'
 import HeroSection from '../HeroSection.vue'
+import MyHeader from '../MyHeader.vue';
 export default {
     data() {
         return {
@@ -383,7 +383,7 @@ export default {
 
 
     components: {
-        myheader,
+        MyHeader,
         myfooter,
         HeroSection,
     }

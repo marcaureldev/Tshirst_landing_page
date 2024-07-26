@@ -1,7 +1,7 @@
 <template>
     <!--HEADER SECTION ----------------------------------------------------------------------------- -->
     <header class="sticky top-0 bg-white">
-        <myheader />
+        <MyHeader />
     </header>
 
     <!-- SECTION OUR TEAM----------------------------------------------------------------------------- -->
@@ -231,11 +231,11 @@
 </template>
 
 <script>
-import myheader from '../myheader.vue'
 import HeroSection from '../HeroSection.vue'
 import Navbar from '../Navbar.vue'
 import EnjoyCard from '../EnjoyCard.vue'
 import myfooter from '../myfooter.vue'
+import MyHeader from '../MyHeader.vue'
 export default {
     data() {
         return {
@@ -245,7 +245,7 @@ export default {
     },
 
     components: {
-        myheader,
+        MyHeader,
         Navbar,
         EnjoyCard,
         myfooter,

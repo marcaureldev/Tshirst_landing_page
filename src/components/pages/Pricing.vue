@@ -1,6 +1,6 @@
 <template>
     <header>
-        <myheader />
+        <MyHeader />
     </header>
 
     <section class="bg-secondary_color">
@@ -234,9 +234,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import myheader from '../myheader.vue'
 import myfooter from '../myfooter.vue'
 import HeroSection from '../HeroSection.vue'
+import MyHeader from '../MyHeader.vue';
 
 const isChecked = ref(false)
 

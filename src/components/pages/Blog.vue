@@ -1,6 +1,6 @@
 <template>
     <header>
-        <myheader />
+        <MyHeader />
     </header>
 
     <section class="bg-btn_color">
@@ -65,12 +65,12 @@
 import { ref, provide } from 'vue'
 import HeroSection from '../HeroSection.vue'
 import guillemets from '../../assets/icons/guillemets.svg'
-import myheader from '../myheader.vue'
 import myfooter from '../myfooter.vue'
 import MyAsideBar from '../MyAsideBar.vue'
 import DSideBar from '../DSideBar.vue'
 import Details from '../Details.vue'
 import ToogleButton from '../ToogleButton.vue'
+import MyHeader from '../MyHeader.vue'
 export default {
     data() {
         return {
@@ -114,7 +114,7 @@ export default {
         }
     },
     components: {
-        myheader,
+        MyHeader,
         myfooter,
         MyAsideBar,
         DSideBar,

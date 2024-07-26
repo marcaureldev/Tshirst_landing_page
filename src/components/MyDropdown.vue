@@ -1,8 +1,7 @@
 <template>
     <div class="card flex justify-content-center">
         <Dropdown ref="dropdown" v-model="selectedCity" :options="options" optionLabel="label"
-            :placeholder="placeholder" 
-            class="w-full md:w-14rem" @change="handleChange" />
+            :placeholder="placeholder" class="" @change="handleChange" />
     </div>
 </template>
 
@@ -39,10 +38,9 @@ export default {
         handleChange(event) {
             this.$emit('select', event.value.route); // Émet l'événement avec la route associée
         }
-    
+
     }
 };
 </script>
 
-<style>
-</style>
+<style></style>

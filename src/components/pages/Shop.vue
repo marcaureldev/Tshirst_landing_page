@@ -1,7 +1,7 @@
 <template>
     <div class="shop">
         <header>
-            <myheader />
+            <MyHeader />
         </header>
 
         <section class="bg-secondary_color">
@@ -172,11 +172,11 @@
 
 <script>
 import BDD from "../../BDD.js";
-import myheader from "../myheader.vue";
 import HeroSection from "../HeroSection.vue";
 import myfooter from "../myfooter.vue";
 import Shop_card from "../Shop_card.vue";
 import { onMounted, ref, watch } from "vue";
+import MyHeader from "../MyHeader.vue";
 export default {
     data() {
         return {
@@ -186,7 +186,7 @@ export default {
         };
     },
     components: {
-        myheader,
+        MyHeader,
         HeroSection,
         Shop_card,
         myfooter,

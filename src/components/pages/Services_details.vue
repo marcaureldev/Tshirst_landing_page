@@ -1,6 +1,6 @@
 <template>
     <header>
-        <myheader />
+        <MyHeader />
     </header>
 
     <section class="bg-secondary_color">
@@ -307,7 +307,7 @@
 <script>
 import Shipping from '../../assets/icons/shipping_worlwide.svg'
 import HeroSection from '../HeroSection.vue';
-import myheader from '../myheader.vue'
+import MyHeader from '../MyHeader.vue';
 import myfooter from '../myfooter.vue'
 export default {
     data() {
@@ -318,7 +318,7 @@ export default {
         }
     },
     components: {
-        myheader,
+        MyHeader,
         myfooter,
         HeroSection,
     }
